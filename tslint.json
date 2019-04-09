@@ -1,19 +1,55 @@
 {
-  "defaultSeverity": "warning",
-  "extends": [
-    "tslint:recommended"
-  ],
-  "linterOptions": {
-    "exclude": [
-      "node_modules/**"
-    ]
-  },
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-airbnb", "tslint-config-prettier"],
+  "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"],
-    "indent": [true, "spaces", 2],
-    "interface-name": false,
-    "ordered-imports": false,
-    "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "no-shadowed-variable": true,
+    // "no-use-before-declare": false,
+    "no-duplicate-variable": true,
+    "no-duplicate-imports": true,
+    "no-duplicate-super": true,
+    "one-variable-per-declaration": true,
+    "import-name": false,
+    // "no-unused": false,
+    "early-exit": true,
+    "no-collapsible-if": true,
+    "no-console": false,
+    "no-unnecessary-else": true,
+    "no-return-undefined": true,
+    "no-static-this": true,
+    "no-unnecessary-type-annotation": true,
+    "no-var-before-return": true,
+    // "no-unnecessary-local-variable": true,
+    "only-arrow-functions": true,
+    "ter-newline-after-var": [true, "always"],
+    "max-func-body-length": [
+      true,
+      {
+        "ignore-comments": true,
+        "func-body-length": 30,
+        "method-body-length": 100
+      }
+    ],
+    "cyclomatic-complexity": [true, 20],
+    "max-file-line-count": [false],
+    "prefer-const": true,
+    "newline-before-return": true,
+    "prefer-method-signature": true,
+    "no-return-await": true,
+    "prefer-conditional-expression": true,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore"
+    ],
+    "member-ordering": false,
+    "object-literal-sort-keys": false
+    // "no-unused-variable": false
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["**/__tests__", "**/*.test.tsx", "tools", "**/*.vue", "**/*.spec.ts"]
   }
 }
